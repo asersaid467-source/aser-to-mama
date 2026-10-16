@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>From Aser to Mam ❤️</title>
+<style>
+:root{--pink:#ff5d91;--rose:#ffb3ca;--cream:#fff8f3;--ink:#74324d}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Tahoma,Arial,sans-serif;color:var(--ink);background:radial-gradient(circle at 15% 20%,#fff 0 2px,transparent 3px),linear-gradient(135deg,#fff0f5,#ffe1eb 45%,#fff7ef);overflow-x:hidden}
+#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.heart{position:absolute;bottom:-40px;color:#ff6e9e;opacity:.72;animation:rise linear forwards}
+@keyframes rise{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+.wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px 16px;position:relative}
+.card{width:min(720px,100%);text-align:center}
+.tag{display:inline-block;background:#ffffffb8;border:1px solid #ffc7d8;border-radius:999px;padding:8px 16px;font-size:.9rem;letter-spacing:.4px}
+h1{font-size:clamp(2rem,7vw,3.5rem);margin:15px 0 5px;color:#d83f78}
+.sub{margin:0 0 28px;color:#9d5470}
+.envelope-wrap{perspective:1000px;margin:0 auto;width:min(430px,92vw);height:275px;position:relative;cursor:pointer;filter:drop-shadow(0 22px 24px #bc47742b);outline:none}
+.envelope{position:absolute;inset:35px 0 0;height:225px;border-radius:14px;background:linear-gradient(145deg,#ffadc7,#ff7ca7);overflow:visible}
+.env-back{position:absolute;inset:0;border-radius:14px;background:linear-gradient(145deg,#ff8db2,#f45d91)}
+.letter-peek{position:absolute;left:7%;right:7%;bottom:12px;height:190px;background:#fffaf6;border-radius:10px 10px 4px 4px;transition:transform .8s cubic-bezier(.2,.8,.2,1);padding:20px 16px;overflow:hidden}
+.letter-peek .mini{font-size:2rem}
+.flap{position:absolute;z-index:4;top:0;left:0;width:100%;height:130px;background:linear-gradient(150deg,#ffd0de,#ff8db2);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .7s ease;backface-visibility:hidden}
+.pocket{position:absolute;z-index:3;inset:0;border-radius:14px;background:linear-gradient(145deg,#ffb5cc,#ff78a4);clip-path:polygon(0 0,50% 57%,100% 0,100% 100%,0 100%)}
+.seal{position:absolute;z-index:5;top:74px;left:50%;transform:translateX(-50%);width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#fff4f7;color:#e5427d;font-size:1.55rem;box-shadow:0 5px 14px #b92c6033;transition:opacity .3s}
+.envelope-wrap.open .flap{transform:rotateX(180deg);z-index:1}
+.envelope-wrap.open .seal{opacity:0}
+.envelope-wrap.open .letter-peek{transform:translateY(-115px);height:300px;z-index:2;overflow:visible}
+.hint{font-size:.95rem;color:#a45470;margin:18px 0 0}
+.message{display:none;text-align:right;margin:22px auto 0;width:min(640px,100%);background:#fffaf7eF;border:1px solid #ffd1df;border-radius:24px;padding:clamp(20px,5vw,34px);box-shadow:0 18px 55px #b9346420;animation:appear .7s ease both}
+.opened .message{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.message h2{text-align:center;color:#d83f78;margin:0 0 18px;font-size:1.65rem}
+.message p{font-size:clamp(1rem,2.5vw,1.13rem);line-height:2.05;margin:0;white-space:pre-line}
+.sign{text-align:left;font-weight:bold;color:#d83f78;margin-top:20px;font-size:1.1rem}
+.actions{display:flex;justify-content:center;gap:10px;margin-top:18px;flex-wrap:wrap}
+button{font:inherit;border:0;border-radius:999px;padding:11px 18px;background:#d83f78;color:white;cursor:pointer;box-shadow:0 7px 18px #d83f7833}
+button.secondary{background:#fff;color:#b63869;border:1px solid #ffc2d5}
+.footer{font-size:.82rem;color:#a45d78;margin-top:25px}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="hearts" aria-hidden="true"></div>
+<main class="wrap">
+  <div class="card" id="card">
+    <div class="tag">💌 رسالة صغيرة من ابنك</div>
+    <h1>From Aser to Mam ❤️</h1>
+    <p class="sub">لأغلى وأحن أم في الدنيا</p>
+    <div class="envelope-wrap" id="envelope" role="button" tabindex="0" aria-label="افتحي الظرف لقراءة الرسالة">
+      <div class="envelope">
+        <div class="env-back"></div>
+        <div class="letter-peek"><div class="mini">💗</div><strong>إلى ماما حبيبتي</strong><p style="font-size:.88rem">في رسالة مخصوصة ليكي...</p></div>
+        <div class="flap"></div>
+        <div class="pocket"></div>
+        <div class="seal">♥</div>
+      </div>
+    </div>
+    <p class="hint" id="hint">اضغطي على الظرف عشان تفتحي رسالتك يا ماما 💕</p>
+    <article class="message" id="message">
+      <h2>إلى أحن أم في الدنيا 💖</h2>
+      <p>أنا بحبك أوي يا ماما، ربنا يخليكي ليا يا حياتي كلها. إنتي حياتي كلها والله. مش عايزك تخافي عليّا يا ماما، واطمني عليّا. أنا بإذن الله هبقى حاجة كبيرة أوي، وهخرجك والله وهسفّرك، وهعملك كل اللي بتتمنيه يا حبيبتي، ومش هخليكي ينقصك حاجة والله.
+
+ادعيلي إنتي بس، وأنا واثق في ربنا إن أنا هبقى حاجة كبيرة، وهعملكوا كل اللي نفسكم فيه والله. ربنا يخليكي ليا يا أحلى أم في الدنيا. ❤️</p>
+      <div class="sign">ابنك اللي بيحبك دايمًا،<br>أسر ❤️</div>
+    </article>
+    <div class="actions"><button id="openBtn">افتحي الرسالة 💌</button><button class="secondary" id="againBtn">اقفلي الظرف تاني</button></div>
+    <div class="footer">كل الحب ليكي يا ماما ❤️</div>
+  </div>
+</main>
+<script>
+const env=document.getElementById('envelope'),card=document.getElementById('card'),hint=document.getElementById('hint');
+function openLetter(){env.classList.add('open');card.classList.add('opened');hint.textContent='بحبك يا ماما قد الدنيا كلها ❤️';}
+function closeLetter(){env.classList.remove('open');card.classList.remove('opened');hint.textContent='اضغطي على الظرف عشان تفتحي رسالتك يا ماما 💕';}
+env.addEventListener('click',openLetter);
+env.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLetter();}});
+document.getElementById('openBtn').addEventListener('click',openLetter);
+document.getElementById('againBtn').addEventListener('click',closeLetter);
+const holder=document.getElementById('hearts');
+function heart(){const el=document.createElement('span');el.className='heart';el.textContent=['♥','♡','💗','💖','💕'][Math.floor(Math.random()*5)];el.style.left=Math.random()*100+'%';el.style.fontSize=(14+Math.random()*25)+'px';el.style.animationDuration=(5+Math.random()*6)+'s';holder.appendChild(el);setTimeout(()=>el.remove(),12000);}
+for(let i=0;i<16;i++)setTimeout(heart,i*280);setInterval(heart,650);
+</script>
+</body>
+</html>
